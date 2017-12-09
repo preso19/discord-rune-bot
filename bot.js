@@ -19,30 +19,9 @@ client.on('message', message => {
     if (inputs[0] === '/data') {
         writeAccountInfo(inputs[1], "summonerLevel", "Level", message);
     } else if (inputs[0] === '/ask') {
-        let answers = [ 'da',
-            'nai-veroqtno',
-            'nqma samnenie',
-            'sas sigurnost',
-            '100pro',
-            'tai kat gledam, da',
-            'kloni kam vqrno',
-            'pitai po-kasno oligofren',
-            'nqma da ti kaja',
-            'ddz za bot li me imash',
-            'marzi ma da otgovarqm na maloumnite ti vaprosi v momenta',
-            'koncetrirai sa i pitai pak',
-            'kvi raoti pitash, ti mene uvajavash li ma',
-            'ne razchitai',
-            'ne brat',
-            'chestno kazano ne',
-            'shto ne go lapash',
-            'samnqva me',
-            ':kon_kazak:',
-            'ti za bot li me mislish?',
-            'samo govedo moje da pita takava prostotiq'
-        ];
+        let answers = require('./data/asnwers.js');
 
-        message.channel.send(answers[Math.floor(Math.random() * answers.length) + 1 ]);
+        message.channel.send(answers[Math.floor(Math.random() * answers.length) + 1]);
     }
 });
 
