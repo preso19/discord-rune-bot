@@ -1,0 +1,14 @@
+{
+  "name": "greeter-bot",
+  "version": "1.0.0",
+  "description": "My own Discord bot",
+  "main": "bot.js",
+  "author": "PepoRapa",
+  "dependencies": {
+    "ajax-request": "^1.2.3",
+    "axios": "^0.17.1",
+    "discord.io": "^2.5.3",
+    "discord.js": "^11.2.1",
+    "winston": "^2.4.0"
+  }
+}
