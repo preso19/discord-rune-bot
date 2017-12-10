@@ -14,11 +14,12 @@ client.on('ready', () => {
 client.on('message', message => {
 
     let inputs = message.content.split(' ');
+    inputs[0] = inputs[0].toLowerCase();
 
-    if (inputs[0].toLowerCase() === '/level') {
+    if (inputs[0] === '/level') {
         writeAccountInfo(inputs[1], "summonerLevel", "Level", message);
     } else if (inputs[0] === '/ask') {
-        let answers = require('./data/asnwers.js');
+        let answers = require('./data/answers.js');
 
         message.channel.send(answers[Math.floor(Math.random() * answers.length) + 1]);
     }
