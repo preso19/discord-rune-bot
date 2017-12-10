@@ -17,27 +17,32 @@ client.on('ready', () => {
 client.on('message', message => {
 
     let inputs = message.content.split(' ');
-    command = inputs[0].toLowerCase();
+    let command = inputs[0].toLowerCase();
 
     if (command === '/level') {
         writeAccountInfo(inputs[1], "summonerLevel", "Level", message);
     } else if (command === '/ask') {
         let answers = require('./data/answers.js');
 
-        message.channel.send(answers[Math.floor(Math.random() * answers.length) + 1]);
+        message.channel.send(answers[Math.floor(Math.random() * answers.length)]);
     } else if (command === "/weather") {
-        url = wg_api_url + wg_token + "/conditions/q/BG/" + capitalizeFirstLetter(inputs[1]) + ".json";
+        let url = wg_api_url + wg_token + "/conditions/q/BG/" + capitalizeFirstLetter(inputs[1]) + ".json";
 
         axios.get(url)
             .then(response => {
-                temp = response.data.current_observation.temperature_string.split('(')[1].slice(0, -1);
-                weather = response.data.current_observation.weather;
+                let temp = response.data.current_observation.temperature_string.split('(')[1].slice(0, -1);
+                let weather = response.data.current_observation.weather;
 
                 message.channel.send(`${temp} (${weather})`);
             })
             .catch(error => {
                 console.log(error);
+                message.channel.send('404 city not found.');
             })
+    } else if (command === '/champ') {
+        let champions = require('./data/champions');
+
+        message.channel.send("Shte trqbva da igraesh: " + champions[Math.floor(Math.random() * champions.length)]);
     }
 });
 
