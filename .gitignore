@@ -2,3 +2,4 @@ node_modules/
 .idea/
 config/auth.json
 config/riot_api_token.json
+config/wunderground_token.json

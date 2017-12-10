@@ -3,7 +3,10 @@ const axios = require('axios');
 
 const {discord_token} = require('./config/auth.json');
 const {riot_token} = require('./config/riot_api_token.json');
+const {wg_token} = require('./config/wunderground_token.json');
+
 const riot_api_url = "https://eun1.api.riotgames.com/lol/";
+const wg_api_url = "http://api.wunderground.com/api/";
 
 const client = new Discord.Client();
 
@@ -14,14 +17,27 @@ client.on('ready', () => {
 client.on('message', message => {
 
     let inputs = message.content.split(' ');
-    inputs[0] = inputs[0].toLowerCase();
+    command = inputs[0].toLowerCase();
 
-    if (inputs[0] === '/level') {
+    if (command === '/level') {
         writeAccountInfo(inputs[1], "summonerLevel", "Level", message);
-    } else if (inputs[0] === '/ask') {
+    } else if (command === '/ask') {
         let answers = require('./data/answers.js');
 
         message.channel.send(answers[Math.floor(Math.random() * answers.length) + 1]);
+    } else if (command === "/weather") {
+        url = wg_api_url + wg_token + "/conditions/q/BG/" + capitalizeFirstLetter(inputs[1]) + ".json";
+
+        axios.get(url)
+            .then(response => {
+                temp = response.data.current_observation.temperature_string.split('(')[1].slice(0, -1);
+                weather = response.data.current_observation.weather;
+
+                message.channel.send(`${temp} (${weather})`);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 });
 
@@ -35,6 +51,10 @@ function writeAccountInfo(username, property, property_name, message) {
         .catch(error => {
             throw new Error(error.message);
         });
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
 }
 
 client.login(discord_token)
