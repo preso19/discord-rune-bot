@@ -43,6 +43,15 @@ client.on('message', message => {
         let champions = require('./data/champions');
 
         message.channel.send("Shte trqbva da igraesh: " + champions[Math.floor(Math.random() * champions.length)]);
+    } else if (command === '/3champs') {
+        let champions = require('./data/champions');
+
+        message.channel.send(
+            "Geroi: "
+            + champions[Math.floor(Math.random() * champions.length)] + ", "
+            + champions[Math.floor(Math.random() * champions.length)] + ", "
+            + champions[Math.floor(Math.random() * champions.length)]
+        );
     }
 });
 
