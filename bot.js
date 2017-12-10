@@ -16,7 +16,7 @@ client.on('message', message => {
 
     let inputs = message.content.split(' ');
 
-    if (inputs[0] === '/data') {
+    if (inputs[0].toLowerCase() === '/level') {
         writeAccountInfo(inputs[1], "summonerLevel", "Level", message);
     } else if (inputs[0] === '/ask') {
         let answers = require('./data/asnwers.js');
