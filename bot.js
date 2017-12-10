@@ -1,9 +1,8 @@
-const {discord_token} = require('./config/auth.json');
-const {riot_token} = require('./config/riot_api_token.json');
-
 const Discord = require('discord.js');
 const axios = require('axios');
 
+const {discord_token} = require('./config/auth.json');
+const {riot_token} = require('./config/riot_api_token.json');
 const riot_api_url = "https://eun1.api.riotgames.com/lol/";
 
 const client = new Discord.Client();
@@ -37,4 +36,8 @@ function writeAccountInfo(username, property, property_name, message) {
         });
 }
 
-client.login(discord_token);
+client.login(discord_token)
+    .catch(e => {
+        console.log("Discord API key error. Could not connect.");
+        console.log(String(e));
+    });
