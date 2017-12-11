@@ -44,7 +44,7 @@ client.on('message', message => {
 
         message.channel.send("Shte trqbva da igraesh: " + champions[Math.floor(Math.random() * champions.length)]);
     } else if (command === '/positions') {
-        if ( isNaN(inputs[1]) && inputs[1] > 0 ) {
+        if ( isNaN(inputs[1]) && inputs[1] > 0 && inputs[1] < 6 ) {
             message.channel.send("Wrong command syntax the command must look like: `/positions {number}`");
         } else {
             let positions = require('./data/positions');
