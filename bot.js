@@ -67,6 +67,10 @@ client.on('message', message => {
                 positions_instance.splice(selected_role, 1);
             }
         }
+    } else if (command === '/аsk') {
+        let answers = require('./data/positive_answers');
+
+        message.channel.send(answers[Math.floor(Math.random() * answers.length)]);
     }
 });
 
