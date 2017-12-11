@@ -19,5 +19,8 @@ module.exports = [
     'samnqva me',
     ':kon_kazak:',
     'ti za bot li me mislish?',
-    'samo govedo moje da pita takava prostotiq'
+    'samo govedo moje da pita takava prostotiq',
+    'pitai pavel',
+    'pitai spasa',
+    'https://www.youtube.com/watch?v=e1HrZAuIzKU',
 ];

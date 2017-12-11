@@ -52,6 +52,16 @@ client.on('message', message => {
             + champions[Math.floor(Math.random() * champions.length)] + ", "
             + champions[Math.floor(Math.random() * champions.length)]
         );
+    } else if (command === '/positions') {
+        if ( isNaN(inputs[1]) && inputs[1] > 0 && inputs[1] < 6 ) {
+            message.channel.send("Wrong command syntax the command must look like: `/positions {number}`");
+        } else {
+            let positions = require('./data/positions');
+
+            for (var i = 0; i < inputs[1]; i++) {
+                message.channel.send("Chovek nomer " + inputs[1] + " shte cuka: " + positions[Math.floor(Math.random() * positions.length)]);
+            }
+        }
     }
 });
 
