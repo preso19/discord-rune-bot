@@ -53,13 +53,19 @@ client.on('message', message => {
             + champions[Math.floor(Math.random() * champions.length)]
         );
     } else if (command === '/positions') {
-        if ( isNaN(inputs[1]) && inputs[1] > 0 && inputs[1] < 6 ) {
+        if (typeof inputs[1] === "undefined" || inputs[1] < 0 || inputs[1] > 6) {
             message.channel.send("Wrong command syntax the command must look like: `/positions {number}`");
         } else {
             let positions = require('./data/positions');
+            let selected_role;
+            let cycles = Number(inputs[1]) + 1;
 
-            for (var i = 0; i < inputs[1]; i++) {
-                message.channel.send("Chovek nomer " + inputs[1] + " shte cuka: " + positions[Math.floor(Math.random() * positions.length)]);
+            for (let i = 1; i < cycles; i++) {
+                selected_role = Math.floor(Math.random() * positions.length);
+
+                message.channel.send("Chovek #" + i + " shte cuka: " + positions[selected_role]);
+
+                positions.splice(selected_role, 1);
             }
         }
     }
