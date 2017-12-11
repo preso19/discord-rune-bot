@@ -57,13 +57,14 @@ client.on('message', message => {
                 "`/positions {number}`, 0 < number < 6");
         } else {
             let positions = require('./data/positions');
+            let positions_instance = positions.slice(0);
             let selected_role;
 
             for (let i = 1; i < Number(inputs[1]) + 1; i++) {
-                selected_role = Math.floor(Math.random() * positions.length);
+                selected_role = Math.floor(Math.random() * positions_instance.length);
 
-                message.channel.send("Chovek #" + i + " shte cuka: " + positions[selected_role]);
-                positions.splice(selected_role, 1);
+                message.channel.send("Chovek #" + i + " shte cuka: " + positions_instance[selected_role]);
+                positions_instance.splice(selected_role, 1);
             }
         }
     }
