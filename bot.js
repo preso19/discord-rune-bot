@@ -5,8 +5,7 @@ const {discord_token} = require('./config/auth.json');
 const {riot_token} = require('./config/riot_api_token.json');
 const {wg_token} = require('./config/wunderground_token.json');
 
-const reddit_base_url = "https://www.reddit.com";
-const lol_subreddit_url = "/r/lol.json";
+const reddit_base_url = "https://www.reddit.com/";
 const riot_api_url = "https://eun1.api.riotgames.com/lol/";
 const wg_api_url = "http://api.wunderground.com/api/";
 
@@ -69,12 +68,15 @@ client.on('message', message => {
                 positions_instance.splice(selected_role, 1);
             }
         }
-    } else if (command === '/top') {
-        if (typeof inputs[1] === "undefined" || inputs[1] < 0 || inputs[1] > 11) {
+    } else if (command === '/r') {
+        if (typeof inputs[1] === "undefined"
+            || typeof inputs[2] === "undefined"
+            || inputs[2] < 0
+            || inputs[2] > 10) {
             message.channel.send("Wrong command syntax! The command must look like: " +
-                "`/top {number}`, 0 < number < 10");
+                "`/r {subreddit} {number}`, 0 < number < 10");
         } else {
-            getTopPosts(reddit_base_url + lol_subreddit_url, inputs[1]);
+            getTopPosts(reddit_base_url + 'r/' + inputs[1] + '.json', inputs[2], message);
         }
     } else if (command === '/аsk') {
         let answers = require('./data/positive_answers');
@@ -83,13 +85,14 @@ client.on('message', message => {
     }
 });
 
-function getTopPosts(url, count) {
+function getTopPosts(url, count, message) {
     axios.get(url)
         .then(response => {
-            for (var i = 0; i < count; i++) {
-                let currentPost = response.data.children[i];
+            for (let i = 0; i < count;) {
+                let currentPost = response.data.data.children[i].data;
 
-                message.channel.send('Currently #' + i + 'is titled: ' + currentPost.title + ' Link: ' + reddit_base_url + currentPost.permalink );
+                message.channel.send('Currently #' + ++i + ' is titled: ' + currentPost.title + ' Link: '
+                    + reddit_base_url + currentPost.permalink);
             }
         })
         .catch(error => {
