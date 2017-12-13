@@ -5,6 +5,8 @@ const {discord_token} = require('./config/auth.json');
 const {riot_token} = require('./config/riot_api_token.json');
 const {wg_token} = require('./config/wunderground_token.json');
 
+const reddit_base_url = "https://www.reddit.com";
+const lol_subreddit_url = "/r/lol.json";
 const riot_api_url = "https://eun1.api.riotgames.com/lol/";
 const wg_api_url = "http://api.wunderground.com/api/";
 
@@ -67,12 +69,33 @@ client.on('message', message => {
                 positions_instance.splice(selected_role, 1);
             }
         }
+    } else if (command === '/top') {
+        if (typeof inputs[1] === "undefined" || inputs[1] < 0 || inputs[1] > 11) {
+            message.channel.send("Wrong command syntax! The command must look like: " +
+                "`/top {number}`, 0 < number < 10");
+        } else {
+            getTopPosts(reddit_base_url + lol_subreddit_url, inputs[1]);
+        }
     } else if (command === '/аsk') {
         let answers = require('./data/positive_answers');
 
         message.channel.send(answers[Math.floor(Math.random() * answers.length)]);
     }
 });
+
+function getTopPosts(url, count) {
+    axios.get(url)
+        .then(response => {
+            for (var i = 0; i < count; i++) {
+                let currentPost = response.data.children[i];
+
+                message.channel.send('Currently #' + i + 'is titled: ' + currentPost.title + ' Link: ' + reddit_base_url + currentPost.permalink );
+            }
+        })
+        .catch(error => {
+            throw new Error(error.message);
+        });
+}
 
 function writeAccountInfo(username, property, property_name, message) {
     let url = riot_api_url + "summoner/v3/summoners/by-name/" + username + "?api_key=" + riot_token;
