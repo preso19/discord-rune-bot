@@ -1,7 +1,7 @@
-const Discord = require('discord.js');
+﻿const Discord = require('discord.js');
 const axios = require('axios');
 
-const {discord_token} = require('./config/auth.json');
+//const {discord_token} = require('./config/auth.json');
 const {riot_token} = require('./config/riot_api_token.json');
 const {wg_token} = require('./config/wunderground_token.json');
 
@@ -116,7 +116,7 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
 }
 
-client.login(discord_token)
+client.login(process.env.BOT_TOKEN)
     .catch(e => {
         console.log("Discord API key error. Could not connect.");
         console.log(String(e));
