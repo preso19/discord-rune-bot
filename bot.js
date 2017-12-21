@@ -2,8 +2,8 @@
 const axios = require('axios');
 
 //const {discord_token} = require('./config/auth.json');
-const {riot_token} = require('./config/riot_api_token.json');
-const {wg_token} = require('./config/wunderground_token.json');
+//const {riot_token} = require('./config/riot_api_token.json');
+//const {wg_token} = require('./config/wunderground_token.json');
 
 const reddit_base_url = "https://www.reddit.com/";
 const riot_api_url = "https://eun1.api.riotgames.com/lol/";
