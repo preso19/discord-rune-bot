@@ -4,6 +4,9 @@
   "description": "My own Discord bot",
   "main": "bot.js",
   "author": "PepoRapa",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
     "ajax-request": "^1.2.3",
     "axios": "^0.17.1",
