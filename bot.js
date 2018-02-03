@@ -82,6 +82,8 @@ client.on('message', message => {
         let answers = require('./data/positive_answers');
 
         message.channel.send(answers[Math.floor(Math.random() * answers.length)]);
+    }  else if (command === '/say') {
+        message.channel.send("/tts " + inputs[1]);
     }
 });
 
