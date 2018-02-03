@@ -90,6 +90,8 @@ client.on('message', message => {
         } else {
             message.channel.send("IQ-to na " + inputs[1] + " e " + iq);
         }
+    } else if (command === "test") {
+        message.channel.send("!play gosho");
     }
 });
 
