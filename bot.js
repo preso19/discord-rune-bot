@@ -82,9 +82,14 @@ client.on('message', message => {
         let answers = require('./data/positive_answers');
 
         message.channel.send(answers[Math.floor(Math.random() * answers.length)]);
-    }  else if (command === '/iq') {
+    } else if (command === '/iq') {
         let iq = (Math.floor(Math.random() * 200) + 1) - (Math.floor(Math.random() * 200) + 1);
-        message.channel.send("IQ-to ti e " + iq);
+
+        if (!inputs[1]) {
+            message.channel.send("IQ-to ti e " + iq);
+        } else {
+            message.channel.send("IQ-to na " + inputs[1] + " e " + iq);
+        }
     }
 });
 
