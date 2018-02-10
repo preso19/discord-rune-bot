@@ -1,5 +1,3 @@
 node_modules/
 .idea/
-#config/api/tokens/discord.js
-#config/api/tokens/riot.js
-#config/api/tokens/wunderground.js
+config/api/tokens/index.js
