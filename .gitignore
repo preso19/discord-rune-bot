@@ -1,3 +1,4 @@
 node_modules/
 .idea/
 config/api/tokens/index.js
+bot.js
