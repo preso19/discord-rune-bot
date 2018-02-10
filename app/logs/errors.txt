@@ -7,3 +7,6 @@
 [10.2.2018 14:32:3] level.jsError: Request failed with status code 404
 [10.2.2018 14:32:3] D:\Projects\discord-rune-bot\app\core\commands Error: Request failed with status code 404
 [10.2.2018 15:43:44] D:\Projects\discord-rune-bot\app\core\commandsr.js - ReferenceError: reddit_base_url is not defined
+[10.2.2018 16:14:55] D:\Projects\discord-rune-bot\app\core\commandsr.js - TypeError: Cannot read property 'data' of undefined
+[10.2.2018 16:15:29] D:\Projects\discord-rune-bot\app\core\commandsr.js - TypeError: Cannot read property 'data' of undefined
+[10.2.2018 16:15:39] D:\Projects\discord-rune-bot\app\core\commandsr.js - TypeError: Cannot read property 'data' of undefined
