@@ -15,7 +15,7 @@ module.exports = async commands => {
     return await axios.get(url).then(response => {
         return "The level of " + username + " is " + response.data['summonerLevel'];
     }).catch(error => {
-        log(path.dirname(__filename) + path.basename(__filename) + " - " + error);
+        log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
         return "The summoner was not found.";
     });
 };

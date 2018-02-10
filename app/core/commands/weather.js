@@ -20,7 +20,7 @@ module.exports = async commands => {
 
         return "Vremeto " + connector + " " + city + " e " + weather + ", (" + temp + ")";
     }).catch(error => {
-        log(path.dirname(__filename) + path.basename(__filename) + " - " + error);
+        log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
         return "The city was not found.";
     });
 };
