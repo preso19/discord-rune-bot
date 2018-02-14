@@ -1,8 +1,19 @@
+const axios = require('axios');
+const path = require("path");
+
 module.exports = async commands => {
-	let min = 1;
+    let min = 1;
 	let max = 1800;
 
     let random = Math.floor(Math.random() * (max - min + 1)) + min;
 
-    return "https://xkcd.com/" + random + "/info.0.json";
+    let url = "https://xkcd.com/" + random + "/info.0.json";
+    let username = commands[1];
+
+    return await axios.get(url).then(response => {
+        return response->img;
+    }).catch(error => {
+        log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
+        return "The comic was not found.";
+    });
 };
