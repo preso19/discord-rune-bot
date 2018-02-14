@@ -8,7 +8,6 @@ module.exports = async commands => {
     let random = Math.floor(Math.random() * (max - min + 1)) + min;
 
     let url = "https://xkcd.com/" + random + "/info.0.json";
-    let username = commands[1];
 
     return await axios.get(url).then(response => {
         return response->img;
