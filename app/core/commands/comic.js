@@ -1,5 +1,8 @@
 module.exports = async commands => {
-    let random = (Math.floor(Math.random() * 200) + 1) - (Math.floor(Math.random() * 200) + 1);
+	let min = 1;
+	let max = 1800;
+
+    let random = Math.floor(Math.random() * (max - min + 1)) + min;
 
     return "https://xkcd.com/" + random + "/info.0.json";
 };
