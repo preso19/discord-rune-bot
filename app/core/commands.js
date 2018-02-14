@@ -6,5 +6,6 @@ module.exports = [
     "positions",
     "r",
     "ask",
-    "iq"
+    "iq",
+    "comic"
 ];
