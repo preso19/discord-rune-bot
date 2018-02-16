@@ -1,9 +1,5 @@
 ﻿// Libraries
 const Discord = require('discord.js');
-const axios = require('axios');
-
-// API Token
-const {discord_token} = require('./config/api/tokens/');
 
 // Handle function
 const {handle, log} = require('./app/core/handle');
