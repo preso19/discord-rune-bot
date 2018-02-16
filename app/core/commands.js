@@ -1,5 +1,5 @@
 module.exports = [
-    'level',
+    "level",
     "ask",
     "weather",
     "champs",
@@ -7,5 +7,6 @@ module.exports = [
     "r",
     "ask",
     "iq",
-    "comic"
+    "comic",
+    "play"
 ];
