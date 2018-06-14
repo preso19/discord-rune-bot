@@ -25,7 +25,7 @@ module.exports = {
 
 		axios({
 			method: 'post',
-			url: 'https://api.github.com/repos/DvDty/glasses/issues',
+			url: 'https://api.github.com/repos/preso19/discord-rune-bot/issues',
 			data: {
 				"title": "Automated bug report",
 				"body": bugMsg,
