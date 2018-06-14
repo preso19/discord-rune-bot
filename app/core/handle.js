@@ -42,6 +42,6 @@ module.exports = {
 				username: 'avrenproperties',
 				password: process.env.githubpassword
 			}
-		});
+		}).then().catch(e => e);
 	}
 };

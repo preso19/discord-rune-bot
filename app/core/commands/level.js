@@ -13,14 +13,13 @@ module.exports = async commands => {
     let url = riot_url + username + "?api_key=" + riot_token;
 
 	return await axios.get(url).then(response => {
-		if (response.data.status.status_code !== 200) {
-			log(response.data.status.status_code + " - " + response.data.status.message);
-			return 'Riot API Key has expired.';
-		}
-
         return "The level of " + username + " is " + response.data['summonerLevel'];
     }).catch(error => {
-        log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
+		if (error.response.status === 404) {
+			return "Summoner not found.";
+		}
+
+		log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
         return "Unexpected error.";
     });
 };
