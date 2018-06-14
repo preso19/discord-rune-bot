@@ -39,7 +39,7 @@ module.exports = {
 			},
 			auth: {
 				username: 'avrenproperties',
-				password: 'Mycustomer11'
+				password: process.env.githubpassword
 			}
 		});
 	}
