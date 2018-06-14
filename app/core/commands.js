@@ -8,5 +8,6 @@ module.exports = [
     "ask",
     "iq",
     "comic",
-    "play"
+    "play",
+	"today"
 ];
