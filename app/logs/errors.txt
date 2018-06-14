@@ -11,3 +11,6 @@
 [10.2.2018 16:15:29] D:\Projects\discord-rune-bot\app\core\commandsr.js - TypeError: Cannot read property 'data' of undefined
 [10.2.2018 16:15:39] D:\Projects\discord-rune-bot\app\core\commandsr.js - TypeError: Cannot read property 'data' of undefined[15.6.2018 0:13:30] D:\Projects\discord-rune-bot\app\core\commands/level.js - Error: Request failed with status code 403
 [15.6.2018 0:14:22] D:\Projects\discord-rune-bot\app\core\commands/level.js - Error: Request failed with status code 403
+[15.6.2018 0:30:25] D:\Projects\discord-rune-bot\app\core\commands/level.js - Error: Request failed with status code 403
+[15.6.2018 0:32:46] D:\Projects\discord-rune-bot\app\core\commands/level.js - Error: Request failed with status code 403
+[15.6.2018 0:33:30] D:\Projects\discord-rune-bot\app\core\commands/level.js - Error: Request failed with status code 403
