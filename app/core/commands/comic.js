@@ -10,9 +10,9 @@ module.exports = async commands => {
     let url = "https://xkcd.com/" + random + "/info.0.json";
 
     return await axios.get(url).then(response => {
-    	let decodedResponce = JSON.parse(response);
+    	let decodedResponse = JSON.parse(response);
 
-        return decodedResponce->img;
+        return decodedResponse.img;
     }).catch(error => {
         log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
         return "The comic was not found.";

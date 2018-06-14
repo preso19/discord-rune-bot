@@ -12,7 +12,13 @@ module.exports = async commands => {
     let username = commands[1];
     let url = riot_url + username + "?api_key=" + riot_token;
 
-    return await axios.get(url).then(response => {
+	return await axios.get(url).then(response => {
+		if (response.status.status_code === 403) {
+			let message = 'Riot API Key has expired.';
+			log(message);
+			return message;
+		}
+
         return "The level of " + username + " is " + response.data['summonerLevel'];
     }).catch(error => {
         log(path.dirname(__filename) + "/" + path.basename(__filename) + " - " + error);
