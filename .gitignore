@@ -1,5 +1,4 @@
 node_modules/
 .idea/
-/bot.js
 app/logs/errors.txt
 bot-dev.js
