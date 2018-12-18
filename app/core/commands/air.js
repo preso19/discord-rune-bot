@@ -18,7 +18,6 @@ module.exports = async commands => {
         return "Wrong syntax.\n\n`/air Country-State-City`";
     }
 
-    let url = air_url + wunderground_token + "/conditions/q/BG/" + city + ".json";
     let url = air_url + "city?city=" + city + "&state=" + state + "&country=" + country + "&key=" + air_token;
 
     return await axios.get(url).then(response => {
