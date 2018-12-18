@@ -24,7 +24,3 @@ module.exports = async commands => {
         return "The city was not found.";
     });
 };
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
-}
