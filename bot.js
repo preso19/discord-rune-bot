@@ -2,9 +2,7 @@
 const Discord = require('discord.js');
 
 // Helpers
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.toLowerCase().slice(1);
-}
+const {capitalizeFirstLetter} = require('./app/core/helpers');
 
 // Handle function
 const {handle, log} = require('./app/core/handle');
