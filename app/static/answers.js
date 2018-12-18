@@ -17,10 +17,12 @@ module.exports = [
     'chestno kazano ne',
     'shto ne go lapash',
     'samnqva me',
-    ':kon_kazak:',
     'ti za bot li me mislish?',
     'samo govedo moje da pita takava prostotiq',
     'pitai pavel',
     'pitai spasa',
     'https://www.youtube.com/watch?v=e1HrZAuIzKU',
+    'gabata da kaje',
+    'putki sas zele',
+    'https://www.youtube.com/watch?v=kBwTHELAwBg',
 ];

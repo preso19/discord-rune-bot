@@ -20,6 +20,7 @@ module.exports = {
     darude: kamba,
     chistachka: kamba,
     kamba: kamba,
+    kramonez: kamba,
 
     spas: spas,
     suna: spas,
