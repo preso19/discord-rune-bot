@@ -21,7 +21,7 @@ module.exports = async commands => {
     let url = air_url + 'city?city=' + city + '&state=' + state + '&country=' + country + '&key=' + air_token;
 
     return await axios.get(url).then(response => {
-        let quality = response.data.current.pollution.aqius;
+        let quality = response.data.data.current.pollution.aqius;
         let city = response.data.city;
 
         return 'The air quality in ' + city + ' is ' + quality;
