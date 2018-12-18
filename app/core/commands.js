@@ -9,5 +9,6 @@ module.exports = [
     "iq",
     "comic",
     "play",
-	"today"
+	"today",
+    "air"
 ];
