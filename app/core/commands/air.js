@@ -3,6 +3,7 @@ const path = require('path');
 const {air_token} = require('./../../../config/api/tokens/');
 const {air_url} = require('./../../../config/api/urls/');
 const {log} = require('./../handle');
+const {capitalizeFirstLetter} = require('./../helpers');
 
 module.exports = async commands => {
     if (commands.length < 3) {

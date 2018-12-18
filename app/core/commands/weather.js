@@ -3,6 +3,7 @@ const path = require("path");
 const {wunderground_token} = require('./../../../config/api/tokens/');
 const {wunderground_url} = require('./../../../config/api/urls/');
 const {log} = require('./../handle');
+const {capitalizeFirstLetter} = require('./../helpers');
 
 module.exports = async commands => {
     if (commands.length < 2) {
