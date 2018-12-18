@@ -22,7 +22,7 @@ module.exports = async commands => {
 
     return await axios.get(url).then(response => {
         let quality = response.data.data.current.pollution.aqius;
-        let city = response.data.city;
+        let city = response.data.data.city;
 
         return 'The air quality in ' + city + ' is ' + quality;
     }).catch(error => {
