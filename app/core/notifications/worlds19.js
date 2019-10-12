@@ -3,7 +3,7 @@ const schedule = require('./../../static/worlds19schedule');
 let notification = {
 	start: new Date(2019, 9, 12),
 	end: new Date(2019, 10, 12),
-	checkEvery: 5, //minutes
+	checkEvery: 1, //minutes
 
 	callback: function(channel) {
 		if (!notification.isTimeRangeValid()) {
