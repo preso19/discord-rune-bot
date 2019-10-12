@@ -1,7 +1,7 @@
 module.exports = [
 	// Testing
 	{date: '12/10', time: 9, title: 'Tva dali shte se prati samo v 21:55?'},
-	{date: '13/10', time: -14, title: 'pavel vs nodejs'},
+	{date: '13/10', time: -12, title: 'pavel vs nodejs'},
 
 	// Group stage start
 	{date: '12/10', time: 2, title: 'FNATIC vs SK Telecom T1'},
