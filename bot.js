@@ -14,9 +14,6 @@ client.on('ready', () => {
 
     const channel = client.channels.get(process.env.channel_id);
 
-    let test = new Date;
-    channel.send('test: hours = ' + test.getHours());
-
     // Notifications
     require('./app/core/notify').execute(channel);
 });
