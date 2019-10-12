@@ -1,5 +1,6 @@
 let fs = require('fs');
 let axios = require('axios');
+let onDevEnv = !Boolean(process.env.BOT_TOKEN);
 
 module.exports = {
 	handle: message => {
@@ -20,9 +21,13 @@ module.exports = {
 		bugMsg += " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "] ";
 		bugMsg += error + "\n";
 
-		fs.appendFile('./app/logs/errors.txt', bugMsg, e => {
-			e ? console.log(e) : '';
-		});
+		if (onDevEnv) {
+			fs.appendFile('./app/logs/errors.txt', bugMsg, e => {
+				e ? console.log(e) : '';
+			});
+
+			return;
+		}
 
 		axios({
 			method: 'post',
