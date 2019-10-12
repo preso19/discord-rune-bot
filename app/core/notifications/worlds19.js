@@ -18,7 +18,7 @@ let notification = {
 		matches.forEach(match => {
 			let start = match.time + 13;
 
-			if (now.getHours() + 1 === start && now.getMinutes() === 21) {
+			if (now.getHours() + 1 === start && now.getMinutes() === 55) {
 				channel.send('<:worlds:632631650878226442> 🏆 ' + match.title + ' is starting in 5 minutes! <:POGGERS:524366532155801601>');
 			}
 		});
