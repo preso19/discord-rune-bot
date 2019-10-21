@@ -56,4 +56,12 @@ module.exports = [
 	{date: '20/10', time: 6, title: 'DAMWON Gaming vs ahq e-Sports Club'},
 	{date: '20/10', time: 7, title: 'Invictus Gaming vs Team Liquid'},
 	// Group stage finish
+	
+	// Quarterfinals start
+	{date: '26/10', time: 0, title: 'Griffin vs Invictus Gaming'},
+	{date: '26/10', time: 5, title: 'FunPlus Phoenix vs FNATIC'},
+
+	{date: '27/10', time: 0, title: 'SK Telecom T1 vs Splyce'},
+	{date: '27/10', time: 5, title: 'DAMWON Gaming vs G2 Esports'},
+	// Quarterfinals start
 ];
