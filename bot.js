@@ -12,10 +12,11 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log('Server is listening...');
 
-    const channel = client.channels.get(process.env.channel_id);
-
     // Notifications
-    require('./app/core/notify').execute(channel);
+    require('./app/core/notify').execute({
+        default: client.channels.get(process.env.channel_id_default),
+        lec: client.channels.get(process.env.channel_id_lec),
+    });
 });
 
 client.on('message', message => {
@@ -23,6 +24,6 @@ client.on('message', message => {
 });
 
 client.login(process.env.BOT_TOKEN).catch(e => {
-    console.log("Discord API access error. Could not connect.");
-    log(path.dirname(__filename) + path.basename(__filename) + " - " + String(e));
+    console.log('Discord API access error. Could not connect.');
+    log(path.dirname(__filename) + path.basename(__filename) + ' - ' + String(e));
 });

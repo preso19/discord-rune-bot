@@ -1,11 +1,12 @@
 {
-  "name": "greeter-bot",
-  "version": "1.0.0",
-  "description": "My own Discord bot",
+  "name": "papalandiq-discord-bot",
+  "version": "1.1.0",
+  "description": "Papalandiq Discord Bot",
   "main": "bot.js",
-  "author": "PepoRapa",
+  "author": "PepoRapa, DvDty",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node bot.js",
+    "dev": "node devbot.js"
   },
   "dependencies": {
     "ajax-request": "^1.2.3",

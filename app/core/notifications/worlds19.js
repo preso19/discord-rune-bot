@@ -23,11 +23,6 @@ let notification = {
 			}
 		});
 	},
-
-	isTimeRangeValid: function() {
-		let today = new Date();
-		return today > notification.start && today < notification.end;
-	},
 };
 
 module.exports = {notification};
