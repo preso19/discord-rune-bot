@@ -6,10 +6,6 @@ let notification = {
 	checkEvery: 1, //minutes
 
 	callback: function(channel) {
-		if (!notification.isTimeRangeValid()) {
-			return false;
-		}
-
 		let now = new Date();
 		let today = now.getDate() + '/' + (now.getMonth() + 1);
 

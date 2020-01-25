@@ -12,7 +12,7 @@ module.exports = {
 				return false;
 			}
 
-			if (isTimeRangeValid(notification)) {
+			if (!isTimeRangeValid(notification)) {
 				return false;
 			}
 
