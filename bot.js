@@ -16,6 +16,7 @@ client.on('ready', () => {
     require('./app/core/notify').execute({
         default: client.channels.get(process.env.channel_id_default),
         lec: client.channels.get(process.env.channel_id_lec),
+        lcs: client.channels.get(process.env.channel_id_lcs),
     });
 });
 

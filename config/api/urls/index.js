@@ -8,6 +8,7 @@ module.exports = {
     base: 'https://api.pandascore.co/',
     leagues: {
       lec: 'leagues/league-of-legends-lec/matches/upcoming',
+      lcs: 'leagues/league-of-legends-lcs/matches/upcoming',
     },
   },
 };
