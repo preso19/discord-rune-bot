@@ -13,10 +13,10 @@ client.on('ready', () => {
     console.log('Server is listening...');
 
     // Notifications
-    // require('./app/core/notify').execute({
-    //     default: client.channels.get(process.env.channel_id_default),
-    //     lec: client.channels.get(process.env.channel_id_lec),
-    // });
+    require('./app/core/notify').execute({
+        default: client.channels.get(process.env.channel_id_default),
+        lec: client.channels.get(process.env.channel_id_lec),
+    });
 });
 
 client.on('message', message => {
