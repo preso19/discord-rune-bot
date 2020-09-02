@@ -2,17 +2,28 @@ let fs = require('fs');
 let axios = require('axios');
 let onDevEnv = !Boolean(process.env.BOT_TOKEN);
 let commandsPath = './app/core/commands/';
+const toDifferentChannelCommands = {say: 'default'};
 
 module.exports = {
-	handle: message => {
+	handle: (message, channelIds) => {
 		let commands = fs.readdirSync(commandsPath).map(command => command.replace(/.js/, ''));
 
 		let inputs = message.content.toLowerCase().split(' ');
+		let command = inputs[0].slice(1);
 
-		if (commands.includes(inputs[0].slice(1))) {
-			require('./commands' + inputs[0] + '.js')(inputs).then(
-				response => message.channel.send(response)
-			);
+		if (commands.includes(command)) {
+			require('./commands' + inputs[0] + '.js')(inputs).then(response => {
+				if (
+					Object.keys(toDifferentChannelCommands).includes(command)
+					&& Object.keys(channelIds).includes(toDifferentChannelCommands[command])
+				) {
+					return message.guild.channels
+						.get(channelIds[toDifferentChannelCommands[command]])
+						.send(response);
+				}
+
+				return message.channel.send(response);
+			});
 		}
 	},
 
