@@ -1,10 +1,11 @@
 let fs = require('fs');
 let axios = require('axios');
 let onDevEnv = !Boolean(process.env.BOT_TOKEN);
+let commandsPath = './app/core/commands/';
 
 module.exports = {
 	handle: message => {
-		let commands = require('./commands');
+		let commands = fs.readdirSync(commandsPath).map(command => command.replace(/.js/, ''));
 
 		let inputs = message.content.toLowerCase().split(' ');
 
