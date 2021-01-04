@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "ajax-request": "^1.2.3",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "discord.io": "^2.5.3",
     "discord.js": "^11.4.2",
     "winston": "^2.4.4"
