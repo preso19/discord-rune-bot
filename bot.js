@@ -19,11 +19,11 @@ client.on('ready', () => {
     console.log('Server is listening...');
 
     // Notifications
-    require('./app/core/notify').execute({
-        default: client.channels.get(channelIds.default),
-        lec: client.channels.get(channelIds.lec),
-        lcs: client.channels.get(channelIds.lcs),
-    });
+    // require('./app/core/notify').execute({
+    //     default: client.channels.get(channelIds.default),
+    //     lec: client.channels.get(channelIds.lec),
+    //     lcs: client.channels.get(channelIds.lcs),
+    // });
 });
 
 client.on('message', message => {
