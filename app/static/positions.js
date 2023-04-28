@@ -2,6 +2,6 @@ module.exports = [
     'Top',
     'Jungle',
     'Mid',
-    'Adc',
+    'Bottom',
     'Support',
 ];
